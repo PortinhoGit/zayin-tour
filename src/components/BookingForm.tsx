@@ -6,6 +6,7 @@ import {
   MapPin, Calendar, Users, Baby, Plane, Car, Hotel, FileText,
   Send, Check, ChevronDown, ChevronUp, MessageCircle, X,
 } from "lucide-react";
+import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
 
 const WHATSAPP_NUMBER = "5545984039246";
@@ -224,14 +225,14 @@ export default function BookingForm() {
             animate={{ opacity: 1, height: "auto" }}
             className="mb-5"
           >
-            <a
+            <Link
               href="/ficha-hospede"
               target="_blank"
               className="flex items-center gap-2 text-xs text-turquoise hover:text-turquoise-dark bg-turquoise/5 border border-turquoise/20 rounded-xl px-4 py-3 transition-colors"
             >
               <FileText className="w-4 h-4 flex-shrink-0" />
               <span>📋 {t("fnrh.title")} — {t("fnrh.embraturNotice").substring(3, 80)}...</span>
-            </a>
+            </Link>
           </motion.div>
         )}
 

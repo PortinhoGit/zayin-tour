@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Palmtree, ArrowLeft, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -22,9 +23,9 @@ export default function NotFound() {
             Ops! Parece que você se perdeu na trilha. Volte para a página inicial e explore nossos destinos incríveis em Foz do Iguaçu.
           </p>
         </div>
-        <a href="/" className="inline-flex items-center gap-2 bg-coral hover:bg-coral-dark text-white px-8 py-4 rounded-full font-semibold transition-all hover:shadow-lg hover:shadow-coral/30 hover:-translate-y-0.5 text-lg">
+        <Link href="/" className="inline-flex items-center gap-2 bg-coral hover:bg-coral-dark text-white px-8 py-4 rounded-full font-semibold transition-all hover:shadow-lg hover:shadow-coral/30 hover:-translate-y-0.5 text-lg">
           <ArrowLeft className="w-5 h-5" /> Voltar ao Início
-        </a>
+        </Link>
         <div className="mt-12 flex items-center justify-center gap-2 opacity-50">
           <Palmtree className="w-6 h-6 text-turquoise" />
           <span className="text-white text-sm font-bold" style={{ fontFamily: "var(--font-heading)" }}>

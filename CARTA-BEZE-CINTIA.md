@@ -10,7 +10,7 @@ Que Deus continue abençoando sua vida com muita saúde, alegria e realizações
 
 E por falar em coisas lindas, preparei uma surpresa pra vocês duas! Desenvolvi um **site da Zayin Tour** como referência. Acessem pelo celular ou computador:
 
-### 🔗 https://zayin-tour.netlify.app
+### 🔗 https://portinhogit.github.io/zayin-tour/
 
 Naveguem com calma, testem tudo — formulário, chatbot, ficha de hóspede, troquem o idioma.
 

@@ -1,14 +1,15 @@
 "use client";
 
 import { Palmtree, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function Termos() {
   return (
     <div className="min-h-screen bg-light-bg">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <a href="/" className="inline-flex items-center gap-2 text-turquoise hover:text-turquoise-dark mb-8 transition-colors">
+        <Link href="/" className="inline-flex items-center gap-2 text-turquoise hover:text-turquoise-dark mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4" /> Voltar ao início
-        </a>
+        </Link>
         <div className="flex items-center gap-3 mb-8">
           <Palmtree className="w-8 h-8 text-turquoise" />
           <h1 className="text-3xl font-bold text-ocean-deep" style={{ fontFamily: "var(--font-heading)" }}>Termos de Uso</h1>
