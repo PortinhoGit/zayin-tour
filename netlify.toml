@@ -4,6 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  NEXT_PUBLIC_GA_ID = "G-DEEB2L756T"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
