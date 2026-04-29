@@ -213,6 +213,15 @@ export interface TranslationKeys {
     sectionTravel: string;
     sectionStay: string;
     sectionCompanions: string;
+    comfortMessage: string;
+    familyMessage: string;
+    adults: string;
+    adultsPlaceholder: string;
+    children: string;
+    childrenPlaceholder: string;
+    lookupZip: string;
+    lookupZipLoading: string;
+    lookupZipError: string;
   };
 }
 
@@ -316,10 +325,10 @@ export const translations: Record<Language, TranslationKeys> = {
       source: "Lenda dos povos Guarani — Patrimônio cultural da região da Tríplice Fronteira",
     },
     chatbot: {
-      title: "Assistente Zayin Tour",
+      title: "Tetê — Assistente Zayin Tour",
       placeholder: "Digite sua pergunta...",
-      greeting: "Olá! Sou o assistente virtual da Zayin Tour. Como posso ajudar? Pergunte sobre nossos passeios, preços, horários e mais!",
-      fallback: "Desculpe, não entendi. Tente perguntar sobre: Cataratas, Itaipu, Parque das Aves, preços, horários, transfer ou WhatsApp. Ou fale com a gente pelo WhatsApp!",
+      greeting: "Oiii! 😊 Eu sou a Tetê, sua assistente virtual aqui na Zayin Tour! Estou aqui pra te ajudar com carinho e bom humor. Pergunte sobre passeios, preços, horários... o que precisar, estou à disposição! 💚",
+      fallback: "Hmm, não consegui entender direitinho 😅 Mas não desiste de mim não! Tenta perguntar sobre: Cataratas, Itaipu, Parque das Aves, preços, horários, transfer... Ou se preferir, posso te encaminhar pro nosso WhatsApp! 💬",
     },
     cookie: {
       message: "Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa Política de Privacidade (LGPD).",
@@ -442,6 +451,15 @@ export const translations: Record<Language, TranslationKeys> = {
       sectionTravel: "Dados da viagem",
       sectionStay: "Período de hospedagem",
       sectionCompanions: "Acompanhantes",
+      comfortMessage: "Para seu conforto, preencha a ficha antecipadamente e chegue direto para o quarto ou para um passeio — sem espera, sem filas!",
+      familyMessage: "Mais do que uma agência, somos seus parceiros em cada aventura em Foz do Iguaçu. Viaje com a Família Ferreira Portinho, há mais de 68 anos radicados em Foz do Iguaçu.",
+      adults: "Adultos",
+      adultsPlaceholder: "Nº de adultos",
+      children: "Crianças (até 12 anos)",
+      childrenPlaceholder: "Nº de crianças",
+      lookupZip: "Buscar endereço",
+      lookupZipLoading: "Buscando...",
+      lookupZipError: "CEP não encontrado",
     },
   },
   es: {
@@ -543,10 +561,10 @@ export const translations: Record<Language, TranslationKeys> = {
       source: "Leyenda de los pueblos Guaraníes — Patrimonio cultural de la región de la Triple Frontera",
     },
     chatbot: {
-      title: "Asistente Zayin Tour",
+      title: "Tetê — Asistente Zayin Tour",
       placeholder: "Escribe tu pregunta...",
-      greeting: "¡Hola! Soy el asistente virtual de Zayin Tour. ¿Cómo puedo ayudar? ¡Pregunta sobre nuestros paseos, precios, horarios y más!",
-      fallback: "Disculpa, no entendí. Intenta preguntar sobre: Cataratas, Itaipú, Parque de las Aves, precios, horarios, transfer o WhatsApp. ¡O habla con nosotros por WhatsApp!",
+      greeting: "¡Holaa! 😊 Soy Tetê, tu asistente virtual en Zayin Tour. Estoy aquí para ayudarte con cariño y buen humor. ¡Pregúntame sobre paseos, precios, horarios... lo que necesites! 💚",
+      fallback: "Hmm, no logré entender bien 😅 ¡Pero no te rindas conmigo! Intenta preguntar sobre: Cataratas, Itaipú, Parque de las Aves, precios, horarios, transfer... ¡O te puedo pasar a nuestro WhatsApp! 💬",
     },
     cookie: {
       message: "Utilizamos cookies para mejorar su experiencia. Al continuar navegando, acepta nuestra Política de Privacidad.",
@@ -669,6 +687,15 @@ export const translations: Record<Language, TranslationKeys> = {
       sectionTravel: "Datos del viaje",
       sectionStay: "Período de hospedaje",
       sectionCompanions: "Acompañantes",
+      comfortMessage: "Para su comodidad, complete la ficha con antelación y llegue directo a su habitación o a un paseo — ¡sin esperas, sin filas!",
+      familyMessage: "Más que una agencia, somos sus compañeros en cada aventura en Foz do Iguazú. Viaje con la Familia Ferreira Portinho, hace más de 68 años radicados en Foz do Iguazú.",
+      adults: "Adultos",
+      adultsPlaceholder: "Nº de adultos",
+      children: "Niños (hasta 12 años)",
+      childrenPlaceholder: "Nº de niños",
+      lookupZip: "Buscar dirección",
+      lookupZipLoading: "Buscando...",
+      lookupZipError: "Código postal no encontrado",
     },
   },
   en: {
@@ -770,10 +797,10 @@ export const translations: Record<Language, TranslationKeys> = {
       source: "Legend of the Guarani peoples — Cultural heritage of the Triple Border region",
     },
     chatbot: {
-      title: "Zayin Tour Assistant",
+      title: "Tetê — Zayin Tour Assistant",
       placeholder: "Type your question...",
-      greeting: "Hello! I'm Zayin Tour's virtual assistant. How can I help? Ask about our tours, prices, schedules and more!",
-      fallback: "Sorry, I didn't understand. Try asking about: Iguazu Falls, Itaipu, Bird Park, prices, schedules, transfers or WhatsApp. Or chat with us on WhatsApp!",
+      greeting: "Hiii! 😊 I'm Tetê, your virtual assistant at Zayin Tour! I'm here to help you with warmth and good vibes. Ask me about tours, prices, schedules... whatever you need! 💚",
+      fallback: "Hmm, I couldn't quite understand that 😅 But don't give up on me! Try asking about: Iguazu Falls, Itaipu, Bird Park, prices, schedules, transfers... Or I can direct you to our WhatsApp! 💬",
     },
     cookie: {
       message: "We use cookies to improve your experience. By continuing to browse, you agree to our Privacy Policy.",
@@ -896,6 +923,15 @@ export const translations: Record<Language, TranslationKeys> = {
       sectionTravel: "Travel details",
       sectionStay: "Stay period",
       sectionCompanions: "Companions",
+      comfortMessage: "For your comfort, fill in the form in advance and go straight to your room or out on a tour — no waiting, no lines!",
+      familyMessage: "More than an agency, we are your partners in every adventure in Foz do Iguazu. Travel with the Ferreira Portinho Family, based in Foz do Iguazu for over 68 years.",
+      adults: "Adults",
+      adultsPlaceholder: "No. of adults",
+      children: "Children (under 12)",
+      childrenPlaceholder: "No. of children",
+      lookupZip: "Lookup address",
+      lookupZipLoading: "Looking up...",
+      lookupZipError: "Zip code not found",
     },
   },
 };

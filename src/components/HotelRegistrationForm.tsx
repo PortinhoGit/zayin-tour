@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import {
   User, Globe, FileText, Calendar, Mail, Phone,
-  MapPin, Briefcase, Plane, Car, Bus, Plus, Trash2,
-  Send, Shield, Scale,
+  MapPin, Plane, Car, Bus, Plus, Trash2,
+  Send, Shield, Scale, Search, Loader2, Users, Baby, Heart,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
@@ -44,6 +44,8 @@ export default function HotelRegistrationForm() {
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
   const [zipCode, setZipCode] = useState("");
+  const [zipLoading, setZipLoading] = useState(false);
+  const [zipError, setZipError] = useState("");
   const [profession, setProfession] = useState("");
   const [travelReason, setTravelReason] = useState("reasonTourism");
   const [transportation, setTransportation] = useState("");
@@ -51,7 +53,69 @@ export default function HotelRegistrationForm() {
   const [nextDestination, setNextDestination] = useState("");
   const [checkinDate, setCheckinDate] = useState("");
   const [checkoutDate, setCheckoutDate] = useState("");
+  const [adults, setAdults] = useState("");
+  const [children, setChildren] = useState("");
   const [companions, setCompanions] = useState<Companion[]>([]);
+
+  // ── CEP / Zip lookup ──
+  const lookupZip = useCallback(async (code: string) => {
+    const clean = code.replace(/\D/g, "");
+    setZipError("");
+
+    // Brazilian CEP (8 digits)
+    if (clean.length === 8) {
+      setZipLoading(true);
+      try {
+        const res = await fetch(`https://viacep.com.br/ws/${clean}/json/`);
+        const data = await res.json();
+        if (!data.erro) {
+          setAddress(data.logradouro || "");
+          setCity(data.localidade || "");
+          setState(data.uf || "");
+          setCountry("Brasil");
+        } else {
+          setZipError(t("fnrh.lookupZipError"));
+        }
+      } catch {
+        setZipError(t("fnrh.lookupZipError"));
+      }
+      setZipLoading(false);
+      return;
+    }
+
+    // Argentine postal code (4 digits or letter+4+3letters)
+    const arClean = code.replace(/\s/g, "");
+    if (/^\d{4}$/.test(arClean) || /^[A-Za-z]\d{4}[A-Za-z]{3}$/.test(arClean)) {
+      setCountry("Argentina");
+      return;
+    }
+
+    // US ZIP (5 digits or 5+4)
+    if (/^\d{5}(-\d{4})?$/.test(clean) || clean.length === 5) {
+      setZipLoading(true);
+      try {
+        const res = await fetch(`https://api.zippopotam.us/us/${clean.substring(0, 5)}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data.places && data.places.length > 0) {
+            setCity(data.places[0]["place name"] || "");
+            setState(data.places[0]["state abbreviation"] || "");
+            setCountry("United States");
+          }
+        } else {
+          setZipError(t("fnrh.lookupZipError"));
+        }
+      } catch {
+        setZipError(t("fnrh.lookupZipError"));
+      }
+      setZipLoading(false);
+    }
+  }, [t]);
+
+  const handleZipChange = (value: string) => {
+    setZipCode(value);
+    setZipError("");
+  };
 
   const addCompanion = () => {
     setCompanions((prev) => [...prev, { name: "", document: "", relation: "" }]);
@@ -93,11 +157,11 @@ export default function HotelRegistrationForm() {
 
     // Address
     lines.push(`📍 *${t("fnrh.sectionAddress")}*`);
+    if (zipCode) lines.push(`${t("fnrh.zipCode")}: ${zipCode}`);
     if (address) lines.push(`${t("fnrh.address")}: ${address}`);
     lines.push(`${t("fnrh.city")}: ${city || "—"}`);
     if (state) lines.push(`${t("fnrh.state")}: ${state}`);
     lines.push(`${t("fnrh.country")}: ${country || "—"}`);
-    if (zipCode) lines.push(`${t("fnrh.zipCode")}: ${zipCode}`);
     lines.push("");
 
     // Travel
@@ -112,6 +176,8 @@ export default function HotelRegistrationForm() {
     lines.push(`🏨 *${t("fnrh.sectionStay")}*`);
     lines.push(`${t("fnrh.checkinDate")}: ${checkinDate || "—"}`);
     lines.push(`${t("fnrh.checkoutDate")}: ${checkoutDate || "—"}`);
+    if (adults) lines.push(`${t("fnrh.adults")}: ${adults}`);
+    if (children) lines.push(`${t("fnrh.children")}: ${children}`);
     lines.push("");
 
     // Companions
@@ -154,6 +220,22 @@ export default function HotelRegistrationForm() {
           {t("fnrh.title")}
         </h2>
         <p className="text-sm text-gray-500">{t("fnrh.subtitle")}</p>
+      </div>
+
+      {/* Comfort message */}
+      <div className="flex items-start gap-3 bg-gradient-to-r from-turquoise/5 to-tropical-green/5 border border-turquoise/20 rounded-xl px-4 py-4 mb-4">
+        <span className="text-2xl flex-shrink-0">🛎️</span>
+        <p className="text-sm text-ocean-deep leading-relaxed font-medium">
+          {t("fnrh.comfortMessage")}
+        </p>
+      </div>
+
+      {/* Family message */}
+      <div className="flex items-start gap-3 bg-coral/5 border border-coral/20 rounded-xl px-4 py-4 mb-4">
+        <Heart className="w-5 h-5 text-coral flex-shrink-0 mt-0.5" />
+        <p className="text-sm text-gray-700 leading-relaxed italic">
+          {t("fnrh.familyMessage")}
+        </p>
       </div>
 
       {/* Notices */}
@@ -225,10 +307,38 @@ export default function HotelRegistrationForm() {
         </div>
       </div>
 
-      {/* ──── ADDRESS ──── */}
+      {/* ──── ADDRESS (starts with ZIP) ──── */}
       <SectionTitle icon={MapPin} text={t("fnrh.sectionAddress")} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        {/* ZIP first with lookup button */}
+        <div className="sm:col-span-2">
+          <label className={labelClass}>{t("fnrh.zipCode")}</label>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={zipCode}
+              onChange={(e) => handleZipChange(e.target.value)}
+              onBlur={() => zipCode && lookupZip(zipCode)}
+              placeholder={t("fnrh.zipCodePlaceholder")}
+              className={inputClass}
+            />
+            <button
+              type="button"
+              onClick={() => lookupZip(zipCode)}
+              disabled={zipLoading || !zipCode}
+              className="flex items-center gap-1.5 px-4 py-3 bg-turquoise hover:bg-turquoise-dark disabled:bg-gray-300 text-white rounded-xl text-xs font-semibold transition-colors whitespace-nowrap"
+            >
+              {zipLoading ? (
+                <><Loader2 className="w-3.5 h-3.5 animate-spin" /> {t("fnrh.lookupZipLoading")}</>
+              ) : (
+                <><Search className="w-3.5 h-3.5" /> {t("fnrh.lookupZip")}</>
+              )}
+            </button>
+          </div>
+          {zipError && <p className="text-xs text-red-500 mt-1">{zipError}</p>}
+        </div>
+
         <div className="sm:col-span-2">
           <label className={labelClass}>{t("fnrh.address")}</label>
           <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder={t("fnrh.addressPlaceholder")} className={inputClass} />
@@ -244,10 +354,6 @@ export default function HotelRegistrationForm() {
         <div>
           <label className={labelClass}>{t("fnrh.country")} *</label>
           <input type="text" value={country} onChange={(e) => setCountry(e.target.value)} placeholder={t("fnrh.countryPlaceholder")} className={inputClass} />
-        </div>
-        <div>
-          <label className={labelClass}>{t("fnrh.zipCode")}</label>
-          <input type="text" value={zipCode} onChange={(e) => setZipCode(e.target.value)} placeholder={t("fnrh.zipCodePlaceholder")} className={inputClass} />
         </div>
       </div>
 
@@ -296,10 +402,10 @@ export default function HotelRegistrationForm() {
         </div>
       </div>
 
-      {/* ──── STAY ──── */}
+      {/* ──── STAY (dates side by side + adults/children) ──── */}
       <SectionTitle icon={Calendar} text={t("fnrh.sectionStay")} />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
         <div>
           <label className={labelClass}>{t("fnrh.checkinDate")} *</label>
           <input type="date" value={checkinDate} onChange={(e) => setCheckinDate(e.target.value)} className={inputClass} />
@@ -307,6 +413,18 @@ export default function HotelRegistrationForm() {
         <div>
           <label className={labelClass}>{t("fnrh.checkoutDate")} *</label>
           <input type="date" value={checkoutDate} onChange={(e) => setCheckoutDate(e.target.value)} className={inputClass} />
+        </div>
+        <div>
+          <label className={labelClass + " flex items-center gap-1"}>
+            <Users className="w-3 h-3" /> {t("fnrh.adults")}
+          </label>
+          <input type="number" min="1" max="100" value={adults} onChange={(e) => setAdults(e.target.value)} placeholder={t("fnrh.adultsPlaceholder")} className={inputClass} />
+        </div>
+        <div>
+          <label className={labelClass + " flex items-center gap-1"}>
+            <Baby className="w-3 h-3" /> {t("fnrh.children")}
+          </label>
+          <input type="number" min="0" max="100" value={children} onChange={(e) => setChildren(e.target.value)} placeholder={t("fnrh.childrenPlaceholder")} className={inputClass} />
         </div>
       </div>
 

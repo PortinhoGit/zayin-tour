@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send } from "lucide-react";
+import { X, Send } from "lucide-react";
+import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 import { findAnswer } from "@/lib/chatbot-faq";
 
@@ -53,16 +54,27 @@ export default function Chatbot() {
 
   return (
     <>
-      {/* Toggle button - positioned above WhatsApp button */}
+      {/* Toggle button - Tetê avatar */}
       <motion.button
         data-chatbot-toggle
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-28 right-6 z-50 w-14 h-14 bg-turquoise hover:bg-turquoise-dark text-white rounded-full flex items-center justify-center shadow-xl transition-colors"
-        whileHover={{ scale: 1.05 }}
+        className="fixed bottom-28 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all overflow-hidden border-2 border-turquoise"
+        whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         aria-label={t("chatbot.title")}
+        style={{ background: isOpen ? "#0e7490" : "transparent" }}
       >
-        {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
+        {isOpen ? (
+          <X className="w-6 h-6 text-white" />
+        ) : (
+          <Image
+            src="/images/tete-avatar.svg"
+            alt="Tetê"
+            width={56}
+            height={56}
+            className="w-full h-full object-cover"
+          />
+        )}
       </motion.button>
 
       {/* Chat window */}
@@ -76,14 +88,20 @@ export default function Chatbot() {
             className="fixed bottom-44 right-6 z-50 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col"
             style={{ maxHeight: "450px" }}
           >
-            {/* Header */}
+            {/* Header with Tetê */}
             <div className="bg-gradient-to-r from-turquoise to-ocean-mid px-4 py-3 flex items-center gap-3">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <MessageSquare className="w-4 h-4 text-white" />
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white/30 flex-shrink-0">
+                <Image
+                  src="/images/tete-avatar.svg"
+                  alt="Tetê"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-white font-semibold text-sm">{t("chatbot.title")}</p>
-                <p className="text-white/70 text-xs">Online</p>
+                <p className="text-white/70 text-xs">Online 😊</p>
               </div>
             </div>
 
@@ -94,8 +112,19 @@ export default function Chatbot() {
                   key={i}
                   className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
                 >
+                  {msg.from === "bot" && (
+                    <div className="w-6 h-6 rounded-full overflow-hidden mr-2 flex-shrink-0 mt-1">
+                      <Image
+                        src="/images/tete-avatar.svg"
+                        alt="Tetê"
+                        width={24}
+                        height={24}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
                   <div
-                    className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                    className={`max-w-[75%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
                       msg.from === "user"
                         ? "bg-turquoise text-white rounded-br-md"
                         : "bg-gray-100 text-gray-800 rounded-bl-md"

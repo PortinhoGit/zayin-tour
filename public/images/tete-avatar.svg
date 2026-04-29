@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="none">
+  <!-- Circular clip -->
+  <defs>
+    <clipPath id="circle">
+      <circle cx="60" cy="56" r="52"/>
+    </clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="60%" stop-color="#B0E0FF"/>
+      <stop offset="100%" stop-color="#E8F4FD"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Border ring -->
+  <circle cx="60" cy="56" r="55" fill="#2DD4BF"/>
+  <circle cx="60" cy="56" r="53" fill="#1a8a7d"/>
+
+  <!-- Scene inside circle -->
+  <g clip-path="url(#circle)">
+    <!-- Sky -->
+    <rect x="0" y="0" width="120" height="110" fill="url(#sky)"/>
+
+    <!-- Clouds -->
+    <ellipse cx="25" cy="18" rx="18" ry="8" fill="white" opacity="0.7"/>
+    <ellipse cx="35" cy="15" rx="14" ry="7" fill="white" opacity="0.8"/>
+    <ellipse cx="90" cy="22" rx="16" ry="7" fill="white" opacity="0.6"/>
+    <ellipse cx="100" cy="19" rx="12" ry="6" fill="white" opacity="0.7"/>
+
+    <!-- Rainbow (subtle) -->
+    <path d="M15 50 Q60 10 105 50" stroke="#FF6B6B" stroke-width="2" fill="none" opacity="0.3"/>
+    <path d="M13 52 Q60 12 107 52" stroke="#FFD93D" stroke-width="2" fill="none" opacity="0.25"/>
+    <path d="M11 54 Q60 14 109 54" stroke="#2DD4BF" stroke-width="2" fill="none" opacity="0.3"/>
+
+    <!-- Distant forest (behind falls) -->
+    <rect x="0" y="30" width="120" height="25" fill="#1B5E20" opacity="0.6"/>
+    <ellipse cx="10" cy="32" rx="12" ry="10" fill="#2E7D32" opacity="0.7"/>
+    <ellipse cx="30" cy="30" rx="15" ry="12" fill="#388E3C" opacity="0.7"/>
+    <ellipse cx="55" cy="28" rx="14" ry="11" fill="#2E7D32" opacity="0.6"/>
+    <ellipse cx="80" cy="30" rx="16" ry="12" fill="#388E3C" opacity="0.7"/>
+    <ellipse cx="105" cy="32" rx="14" ry="10" fill="#2E7D32" opacity="0.7"/>
+
+    <!-- Cliff edges -->
+    <path d="M0 42 L25 42 L25 85 L0 85 Z" fill="#5D4037"/>
+    <path d="M95 42 L120 42 L120 85 L95 85 Z" fill="#5D4037"/>
+    <path d="M42 45 L78 45 L78 85 L42 85 Z" fill="#5D4037"/>
+
+    <!-- Cliff vegetation -->
+    <rect x="0" y="38" width="28" height="6" rx="3" fill="#2E7D32"/>
+    <rect x="92" y="38" width="28" height="6" rx="3" fill="#2E7D32"/>
+    <rect x="39" y="41" width="42" height="6" rx="3" fill="#388E3C"/>
+
+    <!-- WATERFALLS - Left cascade -->
+    <rect x="26" y="43" width="5" fill="white" height="40" opacity="0.9"/>
+    <rect x="28" y="43" width="3" fill="#E0F7FA" height="42" opacity="0.7"/>
+    <rect x="31" y="45" width="4" fill="white" height="38" opacity="0.6"/>
+    <rect x="24" y="44" width="3" fill="white" height="39" opacity="0.5"/>
+
+    <!-- WATERFALLS - Right cascade -->
+    <rect x="88" y="43" width="5" fill="white" height="40" opacity="0.9"/>
+    <rect x="90" y="43" width="4" fill="#E0F7FA" height="42" opacity="0.7"/>
+    <rect x="93" y="44" width="3" fill="white" height="39" opacity="0.5"/>
+
+    <!-- WATERFALLS - Center (Devil's Throat - Garganta do Diabo) -->
+    <rect x="46" y="47" width="4" fill="white" height="36" opacity="0.95"/>
+    <rect x="50" y="48" width="6" fill="white" height="35" opacity="0.9"/>
+    <rect x="56" y="47" width="5" fill="#E0F7FA" height="36" opacity="0.85"/>
+    <rect x="61" y="48" width="5" fill="white" height="35" opacity="0.9"/>
+    <rect x="66" y="47" width="4" fill="white" height="36" opacity="0.8"/>
+    <rect x="70" y="48" width="4" fill="#E0F7FA" height="35" opacity="0.7"/>
+
+    <!-- Mist / spray -->
+    <ellipse cx="55" cy="82" rx="22" ry="8" fill="white" opacity="0.5"/>
+    <ellipse cx="28" cy="80" rx="12" ry="6" fill="white" opacity="0.4"/>
+    <ellipse cx="90" cy="80" rx="12" ry="6" fill="white" opacity="0.4"/>
+    <ellipse cx="60" cy="78" rx="15" ry="5" fill="white" opacity="0.3"/>
+
+    <!-- River/pool at bottom -->
+    <path d="M0 82 Q30 76 60 80 Q90 76 120 82 L120 120 L0 120 Z" fill="url(#water)"/>
+
+    <!-- Water ripples -->
+    <path d="M15 90 Q25 88 35 90 Q45 92 55 90" stroke="white" stroke-width="0.8" fill="none" opacity="0.4"/>
+    <path d="M50 95 Q60 93 70 95 Q80 97 90 95" stroke="white" stroke-width="0.8" fill="none" opacity="0.35"/>
+    <path d="M25 100 Q40 98 55 100" stroke="white" stroke-width="0.6" fill="none" opacity="0.3"/>
+
+    <!-- Toucan silhouette (small) -->
+    <g transform="translate(15,14) scale(0.4)">
+      <ellipse cx="12" cy="10" rx="6" ry="5" fill="#1a1a2e"/>
+      <path d="M18 10 L30 8 L28 12 Z" fill="#FF6B00"/>
+      <ellipse cx="7" cy="14" rx="8" ry="6" fill="#1a1a2e"/>
+      <path d="M2 12 L-5 20" stroke="#1a1a2e" stroke-width="1.5"/>
+      <path d="M4 18 L0 25" stroke="#1a1a2e" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Outer glow ring -->
+  <circle cx="60" cy="56" r="54" stroke="#2DD4BF" stroke-width="2" fill="none" opacity="0.5"/>
+
+  <!-- Name "Tetê" below -->
+  <text x="60" y="122" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#2DD4BF" text-anchor="middle" letter-spacing="1.5">Tetê</text>
+</svg>
