@@ -103,6 +103,40 @@ export interface TranslationKeys {
     subtitle: string;
     backHome: string;
   };
+  booking: {
+    destination: string;
+    destinationValue: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    arrivalDate: string;
+    departureDate: string;
+    adults: string;
+    adultsPlaceholder: string;
+    children: string;
+    childrenPlaceholder: string;
+    byAir: string;
+    transfer: string;
+    hotel: string;
+    toursTitle: string;
+    tours: {
+      cataratasBr: string;
+      macucoSafari: string;
+      cataratasAr: string;
+      helicoptero: string;
+      tresFronteiras: string;
+      itaipu: string;
+      parqueAves: string;
+      carroDisposicao: string;
+      comprasParaguai: string;
+      comprasArgentina: string;
+      outros: string;
+    };
+    otherPlaceholder: string;
+    submit: string;
+    disclaimer: string;
+    autoResponse: string;
+    closingMsg: string;
+  };
 }
 
 export const translations: Record<Language, TranslationKeys> = {
@@ -221,6 +255,40 @@ export const translations: Record<Language, TranslationKeys> = {
       subtitle: "Ops! Parece que você se perdeu na trilha. Volte para a página inicial e explore nossos destinos incríveis.",
       backHome: "Voltar ao Início",
     },
+    booking: {
+      destination: "Destino",
+      destinationValue: "Foz do Iguaçu",
+      nameLabel: "Seu nome completo",
+      namePlaceholder: "Digite seu nome completo",
+      arrivalDate: "Data de chegada",
+      departureDate: "Data de partida",
+      adults: "Adultos",
+      adultsPlaceholder: "Nº de adultos",
+      children: "Crianças (até 12 anos)",
+      childrenPlaceholder: "Nº de crianças",
+      byAir: "Chega de avião",
+      transfer: "Transfer aeroporto/hotel",
+      hotel: "Precisa de hotel",
+      toursTitle: "Escolha seus passeios na sua estada",
+      tours: {
+        cataratasBr: "Cataratas do Iguaçu (Brasil)",
+        macucoSafari: "Macuco Safari",
+        cataratasAr: "Cataratas do Iguaçu (Argentina)",
+        helicoptero: "Voo de Helicóptero",
+        tresFronteiras: "Marco das Três Fronteiras",
+        itaipu: "Usina de Itaipu",
+        parqueAves: "Parque das Aves",
+        carroDisposicao: "Carro à disposição",
+        comprasParaguai: "Compras no Paraguai",
+        comprasArgentina: "Compras na Argentina",
+        outros: "Outros",
+      },
+      otherPlaceholder: "Indique outros passeios desejados...",
+      submit: "Enviar pedido pelo WhatsApp",
+      disclaimer: "Você será redirecionado para o WhatsApp da Beze / Zayin Tour",
+      autoResponse: "Obrigado por entrar em contato! Viaje com nossa família, Ferreira Portinho. Estamos há mais de 68 anos em Foz do Iguaçu e teremos prazer em receber vocês! Entraremos em contato tão logo lermos sua mensagem. Muito obrigado! — Beze",
+      closingMsg: "Por favor, confirme estas informações e nos envie um orçamento. Obrigado!",
+    },
   },
   es: {
     nav: {
@@ -337,6 +405,40 @@ export const translations: Record<Language, TranslationKeys> = {
       subtitle: "¡Ups! Parece que te perdiste en el sendero. Vuelve a la página principal y explora nuestros destinos increíbles.",
       backHome: "Volver al Inicio",
     },
+    booking: {
+      destination: "Destino",
+      destinationValue: "Foz do Iguazú",
+      nameLabel: "Su nombre completo",
+      namePlaceholder: "Escriba su nombre completo",
+      arrivalDate: "Fecha de llegada",
+      departureDate: "Fecha de salida",
+      adults: "Adultos",
+      adultsPlaceholder: "Nº de adultos",
+      children: "Niños (hasta 12 años)",
+      childrenPlaceholder: "Nº de niños",
+      byAir: "Llega en avión",
+      transfer: "Transfer aeropuerto/hotel",
+      hotel: "Necesita hotel",
+      toursTitle: "Elija sus paseos durante su estadía",
+      tours: {
+        cataratasBr: "Cataratas del Iguazú (Brasil)",
+        macucoSafari: "Macuco Safari",
+        cataratasAr: "Cataratas del Iguazú (Argentina)",
+        helicoptero: "Vuelo en Helicóptero",
+        tresFronteiras: "Hito de las Tres Fronteras",
+        itaipu: "Represa de Itaipú",
+        parqueAves: "Parque de las Aves",
+        carroDisposicao: "Auto a disposición",
+        comprasParaguai: "Compras en Paraguay",
+        comprasArgentina: "Compras en Argentina",
+        outros: "Otros",
+      },
+      otherPlaceholder: "Indique otros paseos deseados...",
+      submit: "Enviar solicitud por WhatsApp",
+      disclaimer: "Será redirigido al WhatsApp de Beze / Zayin Tour",
+      autoResponse: "¡Gracias por contactarnos! Viaje con nuestra familia, Ferreira Portinho. Estamos hace más de 68 años en Foz do Iguazú y será un placer recibirlos. Nos pondremos en contacto apenas leamos su mensaje. ¡Muchas gracias! — Beze",
+      closingMsg: "Por favor, confirme estas informaciones y envíenos un presupuesto. ¡Gracias!",
+    },
   },
   en: {
     nav: {
@@ -452,6 +554,40 @@ export const translations: Record<Language, TranslationKeys> = {
       title: "Page not found",
       subtitle: "Oops! Looks like you got lost on the trail. Go back to the home page and explore our amazing destinations.",
       backHome: "Back to Home",
+    },
+    booking: {
+      destination: "Destination",
+      destinationValue: "Iguassu Falls / Foz do Iguazu",
+      nameLabel: "Your full name",
+      namePlaceholder: "Enter your full name",
+      arrivalDate: "Arrival date",
+      departureDate: "Departure date",
+      adults: "Adults",
+      adultsPlaceholder: "No. of adults",
+      children: "Children (under 12)",
+      childrenPlaceholder: "No. of children",
+      byAir: "Arriving by air",
+      transfer: "Airport/hotel transfer",
+      hotel: "Need hotel",
+      toursTitle: "Choose your tours during your stay",
+      tours: {
+        cataratasBr: "Iguazu Falls (Brazilian side)",
+        macucoSafari: "Macuco Safari",
+        cataratasAr: "Iguazu Falls (Argentine side)",
+        helicoptero: "Helicopter Flight",
+        tresFronteiras: "Three Borders Landmark",
+        itaipu: "Itaipu Dam",
+        parqueAves: "Bird Park",
+        carroDisposicao: "Car at your disposal",
+        comprasParaguai: "Shopping in Paraguay",
+        comprasArgentina: "Shopping in Argentina",
+        outros: "Others",
+      },
+      otherPlaceholder: "Indicate other desired tours...",
+      submit: "Send request via WhatsApp",
+      disclaimer: "You will be redirected to Beze / Zayin Tour's WhatsApp",
+      autoResponse: "Thank you for reaching out! Travel with our family, Ferreira Portinho. We have been in Foz do Iguazu for over 68 years and it will be our pleasure to welcome you! We will get in touch as soon as we read your message. Thank you so much! — Beze",
+      closingMsg: "Please confirm this information and send us a quote. Thank you!",
     },
   },
 };
