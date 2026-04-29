@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cookie } from "lucide-react";
+import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
 
 export default function CookieBanner() {
@@ -41,9 +42,9 @@ export default function CookieBanner() {
               <Cookie className="w-6 h-6 text-sand flex-shrink-0 mt-0.5" />
               <p className="text-sm text-gray-600">
                 {t("cookie.message")}{" "}
-                <a href="/privacidade" className="text-turquoise hover:underline font-medium">
+                <Link href="/privacidade" className="text-turquoise hover:underline font-medium">
                   {t("cookie.learnMore")}
-                </a>
+                </Link>
               </p>
             </div>
             <div className="flex gap-3 flex-shrink-0">

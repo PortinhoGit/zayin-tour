@@ -1,6 +1,7 @@
 "use client";
 
 import { Palmtree, MapPin, Phone, Mail, MessageCircle, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
 import VisitorCounter from "./VisitorCounter";
 
@@ -115,8 +116,8 @@ export default function Footer() {
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <div className="flex gap-6 text-sm">
-              <a href="/termos" className="text-white/40 hover:text-white/70 transition-colors">{t("footer.terms")}</a>
-              <a href="/privacidade" className="text-white/40 hover:text-white/70 transition-colors">{t("footer.privacy")}</a>
+              <Link href="/termos" className="text-white/40 hover:text-white/70 transition-colors">{t("footer.terms")}</Link>
+              <Link href="/privacidade" className="text-white/40 hover:text-white/70 transition-colors">{t("footer.privacy")}</Link>
             </div>
             <p className="text-white/30 text-xs flex items-center gap-1">
               {t("footer.producedBy")}{" "}
