@@ -59,7 +59,7 @@ export default function BookingForm() {
     );
   };
 
-  const buildWhatsAppMessage = (includeAutoResponse: boolean) => {
+  const buildWhatsAppMessage = () => {
     const tourLabels = selectedTours
       .filter((k) => k !== "outros")
       .map((k) => t(`booking.tours.${k}`));
@@ -68,25 +68,23 @@ export default function BookingForm() {
     }
 
     const lines: string[] = [];
-    if (includeAutoResponse) {
-      lines.push(t("booking.autoResponse"));
-      lines.push("");
-    }
+    lines.push(t("booking.autoResponse"));
+    lines.push("");
     lines.push("───────────────");
-    lines.push(`${t("booking.nameLabel")}: ${name || t("booking.namePlaceholder")}`);
-    lines.push(`${t("booking.arrivalDate")}: ${arrival || "—"}`);
-    lines.push(`${t("booking.departureDate")}: ${departure || "—"}`);
-    lines.push(`${t("booking.adults")}: ${adults || "—"}`);
-    lines.push(`${t("booking.children")}: ${children || "—"}`);
+    if (name.trim()) lines.push(`${t("booking.nameLabel")}: ${name.trim()}`);
+    if (arrival) lines.push(`${t("booking.arrivalDate")}: ${arrival}`);
+    if (departure) lines.push(`${t("booking.departureDate")}: ${departure}`);
+    if (adults) lines.push(`${t("booking.adults")}: ${adults}`);
+    if (children) lines.push(`${t("booking.children")}: ${children}`);
     if (byAir) lines.push(`✈️ ${t("booking.byAir")}`);
     if (needTransfer) lines.push(`🚗 ${t("booking.transfer")}`);
     if (needHotel) lines.push(`🏨 ${t("booking.hotel")}`);
-    lines.push("");
     if (tourLabels.length > 0) {
+      lines.push("");
       lines.push(`${t("booking.toursTitle")}:`);
       tourLabels.forEach((label) => lines.push(`  ✅ ${label}`));
-      lines.push("");
     }
+    lines.push("");
     lines.push(t("booking.closingMsg"));
 
     return encodeURIComponent(lines.join("\n"));
@@ -99,7 +97,7 @@ export default function BookingForm() {
       return;
     }
 
-    const msg = buildWhatsAppMessage(true);
+    const msg = buildWhatsAppMessage();
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
   };
 
