@@ -136,6 +136,83 @@ export interface TranslationKeys {
     disclaimer: string;
     autoResponse: string;
     closingMsg: string;
+    noToursAlert: string;
+    noToursChatbot: string;
+    noToursWhatsapp: string;
+    noToursMessage: string;
+  };
+  fnrh: {
+    title: string;
+    subtitle: string;
+    embraturNotice: string;
+    lgpdNotice: string;
+    fullName: string;
+    fullNamePlaceholder: string;
+    nationality: string;
+    nationalityPlaceholder: string;
+    documentType: string;
+    docCpf: string;
+    docRg: string;
+    docPassport: string;
+    docDni: string;
+    docOther: string;
+    documentNumber: string;
+    documentNumberPlaceholder: string;
+    birthDate: string;
+    gender: string;
+    genderMale: string;
+    genderFemale: string;
+    genderOther: string;
+    genderPreferNot: string;
+    email: string;
+    emailPlaceholder: string;
+    phone: string;
+    phonePlaceholder: string;
+    address: string;
+    addressPlaceholder: string;
+    city: string;
+    cityPlaceholder: string;
+    state: string;
+    statePlaceholder: string;
+    country: string;
+    countryPlaceholder: string;
+    zipCode: string;
+    zipCodePlaceholder: string;
+    profession: string;
+    professionPlaceholder: string;
+    travelReason: string;
+    reasonTourism: string;
+    reasonBusiness: string;
+    reasonEvent: string;
+    reasonHealth: string;
+    reasonOther: string;
+    transportation: string;
+    transportAir: string;
+    transportCar: string;
+    transportBus: string;
+    transportOther: string;
+    previousDestination: string;
+    previousDestinationPlaceholder: string;
+    nextDestination: string;
+    nextDestinationPlaceholder: string;
+    checkinDate: string;
+    checkoutDate: string;
+    companions: string;
+    companionsPlaceholder: string;
+    companionName: string;
+    companionDoc: string;
+    companionRelation: string;
+    addCompanion: string;
+    removeCompanion: string;
+    submit: string;
+    successMessage: string;
+    requiredField: string;
+    sectionPersonal: string;
+    sectionContact: string;
+    sectionAddress: string;
+    sectionTravel: string;
+    sectionStay: string;
+    sectionCompanions: string;
   };
 }
 
@@ -288,6 +365,83 @@ export const translations: Record<Language, TranslationKeys> = {
       disclaimer: "Você será redirecionado para o WhatsApp da Beze / Zayin Tour",
       autoResponse: "Obrigado por entrar em contato! Viaje com nossa família, Ferreira Portinho. Estamos há mais de 68 anos em Foz do Iguaçu e teremos prazer em receber vocês! Entraremos em contato tão logo lermos sua mensagem. Muito obrigado! — Beze",
       closingMsg: "Por favor, confirme estas informações e nos envie um orçamento. Obrigado!",
+      noToursAlert: "Você não selecionou nenhum passeio. Gostaria de conversar com nosso assistente virtual primeiro?",
+      noToursChatbot: "Sim, abrir chat",
+      noToursWhatsapp: "Não, enviar pelo WhatsApp",
+      noToursMessage: "Olá! Gostaria de informações sobre passeios e atividades em Foz do Iguaçu. Podem me ajudar?",
+    },
+    fnrh: {
+      title: "Ficha Nacional de Registro de Hóspedes (FNRH)",
+      subtitle: "Preencha os dados abaixo para sua reserva de hotel",
+      embraturNotice: "⚖️ Conforme exigência da Embratur (Lei nº 11.771/2008 e Portaria MTur nº 17/2015), todos os meios de hospedagem devem coletar os dados dos hóspedes através da Ficha Nacional de Registro de Hóspedes (FNRH).",
+      lgpdNotice: "🔒 Seus dados pessoais serão utilizados exclusivamente para cumprimento das normas da Embratur e para a prestação dos serviços de hospedagem, em conformidade com a LGPD (Lei nº 13.709/2018).",
+      fullName: "Nome completo",
+      fullNamePlaceholder: "Digite seu nome completo",
+      nationality: "Nacionalidade",
+      nationalityPlaceholder: "Ex: Brasileira",
+      documentType: "Tipo de documento",
+      docCpf: "CPF (Brasil)",
+      docRg: "RG / Identidade (Brasil)",
+      docPassport: "Passaporte",
+      docDni: "DNI (Argentina/outros)",
+      docOther: "Outro documento",
+      documentNumber: "Número do documento",
+      documentNumberPlaceholder: "Digite o número do documento",
+      birthDate: "Data de nascimento",
+      gender: "Gênero",
+      genderMale: "Masculino",
+      genderFemale: "Feminino",
+      genderOther: "Outro",
+      genderPreferNot: "Prefiro não informar",
+      email: "E-mail",
+      emailPlaceholder: "seu@email.com",
+      phone: "Telefone / WhatsApp",
+      phonePlaceholder: "+55 (00) 00000-0000",
+      address: "Endereço",
+      addressPlaceholder: "Rua, número, complemento",
+      city: "Cidade",
+      cityPlaceholder: "Sua cidade",
+      state: "Estado / Província",
+      statePlaceholder: "Seu estado",
+      country: "País",
+      countryPlaceholder: "Seu país",
+      zipCode: "CEP / Código postal",
+      zipCodePlaceholder: "00000-000",
+      profession: "Profissão",
+      professionPlaceholder: "Sua profissão",
+      travelReason: "Motivo da viagem",
+      reasonTourism: "Turismo / Lazer",
+      reasonBusiness: "Negócios / Trabalho",
+      reasonEvent: "Evento / Congresso",
+      reasonHealth: "Saúde / Tratamento",
+      reasonOther: "Outro",
+      transportation: "Meio de transporte utilizado",
+      transportAir: "Aéreo",
+      transportCar: "Automóvel",
+      transportBus: "Ônibus",
+      transportOther: "Outro",
+      previousDestination: "Última procedência",
+      previousDestinationPlaceholder: "Cidade/país de onde veio",
+      nextDestination: "Próximo destino",
+      nextDestinationPlaceholder: "Para onde vai depois",
+      checkinDate: "Data de check-in",
+      checkoutDate: "Data de check-out",
+      companions: "Acompanhantes",
+      companionsPlaceholder: "Nº de acompanhantes",
+      companionName: "Nome do acompanhante",
+      companionDoc: "Documento",
+      companionRelation: "Parentesco / Relação",
+      addCompanion: "Adicionar acompanhante",
+      removeCompanion: "Remover",
+      submit: "Enviar ficha pelo WhatsApp",
+      successMessage: "Ficha enviada com sucesso!",
+      requiredField: "Campo obrigatório",
+      sectionPersonal: "Dados pessoais",
+      sectionContact: "Contato",
+      sectionAddress: "Endereço",
+      sectionTravel: "Dados da viagem",
+      sectionStay: "Período de hospedagem",
+      sectionCompanions: "Acompanhantes",
     },
   },
   es: {
@@ -438,6 +592,83 @@ export const translations: Record<Language, TranslationKeys> = {
       disclaimer: "Será redirigido al WhatsApp de Beze / Zayin Tour",
       autoResponse: "¡Gracias por contactarnos! Viaje con nuestra familia, Ferreira Portinho. Estamos hace más de 68 años en Foz do Iguazú y será un placer recibirlos. Nos pondremos en contacto apenas leamos su mensaje. ¡Muchas gracias! — Beze",
       closingMsg: "Por favor, confirme estas informaciones y envíenos un presupuesto. ¡Gracias!",
+      noToursAlert: "No ha seleccionado ningún paseo. ¿Le gustaría hablar con nuestro asistente virtual primero?",
+      noToursChatbot: "Sí, abrir chat",
+      noToursWhatsapp: "No, enviar por WhatsApp",
+      noToursMessage: "¡Hola! Me gustaría recibir información sobre paseos y actividades en Foz do Iguazú. ¿Pueden ayudarme?",
+    },
+    fnrh: {
+      title: "Ficha Nacional de Registro de Huéspedes (FNRH)",
+      subtitle: "Complete los datos para su reserva de hotel",
+      embraturNotice: "⚖️ Según exigencia de Embratur (Ley nº 11.771/2008 y Portaría MTur nº 17/2015), todos los medios de hospedaje deben recopilar los datos de los huéspedes a través de la Ficha Nacional de Registro de Huéspedes (FNRH).",
+      lgpdNotice: "🔒 Sus datos personales serán utilizados exclusivamente para el cumplimiento de las normas de Embratur y para la prestación de servicios de hospedaje, en conformidad con la LGPD (Ley nº 13.709/2018).",
+      fullName: "Nombre completo",
+      fullNamePlaceholder: "Escriba su nombre completo",
+      nationality: "Nacionalidad",
+      nationalityPlaceholder: "Ej: Argentina",
+      documentType: "Tipo de documento",
+      docCpf: "CPF (Brasil)",
+      docRg: "RG / Identidad (Brasil)",
+      docPassport: "Pasaporte",
+      docDni: "DNI (Argentina/otros)",
+      docOther: "Otro documento",
+      documentNumber: "Número de documento",
+      documentNumberPlaceholder: "Escriba el número del documento",
+      birthDate: "Fecha de nacimiento",
+      gender: "Género",
+      genderMale: "Masculino",
+      genderFemale: "Femenino",
+      genderOther: "Otro",
+      genderPreferNot: "Prefiero no informar",
+      email: "Correo electrónico",
+      emailPlaceholder: "su@email.com",
+      phone: "Teléfono / WhatsApp",
+      phonePlaceholder: "+54 (00) 0000-0000",
+      address: "Dirección",
+      addressPlaceholder: "Calle, número, complemento",
+      city: "Ciudad",
+      cityPlaceholder: "Su ciudad",
+      state: "Estado / Provincia",
+      statePlaceholder: "Su provincia",
+      country: "País",
+      countryPlaceholder: "Su país",
+      zipCode: "Código postal",
+      zipCodePlaceholder: "00000",
+      profession: "Profesión",
+      professionPlaceholder: "Su profesión",
+      travelReason: "Motivo del viaje",
+      reasonTourism: "Turismo / Ocio",
+      reasonBusiness: "Negocios / Trabajo",
+      reasonEvent: "Evento / Congreso",
+      reasonHealth: "Salud / Tratamiento",
+      reasonOther: "Otro",
+      transportation: "Medio de transporte utilizado",
+      transportAir: "Aéreo",
+      transportCar: "Automóvil",
+      transportBus: "Autobús",
+      transportOther: "Otro",
+      previousDestination: "Última procedencia",
+      previousDestinationPlaceholder: "Ciudad/país de donde vino",
+      nextDestination: "Próximo destino",
+      nextDestinationPlaceholder: "A dónde va después",
+      checkinDate: "Fecha de check-in",
+      checkoutDate: "Fecha de check-out",
+      companions: "Acompañantes",
+      companionsPlaceholder: "Nº de acompañantes",
+      companionName: "Nombre del acompañante",
+      companionDoc: "Documento",
+      companionRelation: "Parentesco / Relación",
+      addCompanion: "Agregar acompañante",
+      removeCompanion: "Quitar",
+      submit: "Enviar ficha por WhatsApp",
+      successMessage: "¡Ficha enviada con éxito!",
+      requiredField: "Campo obligatorio",
+      sectionPersonal: "Datos personales",
+      sectionContact: "Contacto",
+      sectionAddress: "Dirección",
+      sectionTravel: "Datos del viaje",
+      sectionStay: "Período de hospedaje",
+      sectionCompanions: "Acompañantes",
     },
   },
   en: {
@@ -588,6 +819,83 @@ export const translations: Record<Language, TranslationKeys> = {
       disclaimer: "You will be redirected to Beze / Zayin Tour's WhatsApp",
       autoResponse: "Thank you for reaching out! Travel with our family, Ferreira Portinho. We have been in Foz do Iguazu for over 68 years and it will be our pleasure to welcome you! We will get in touch as soon as we read your message. Thank you so much! — Beze",
       closingMsg: "Please confirm this information and send us a quote. Thank you!",
+      noToursAlert: "You haven't selected any tours. Would you like to chat with our virtual assistant first?",
+      noToursChatbot: "Yes, open chat",
+      noToursWhatsapp: "No, send via WhatsApp",
+      noToursMessage: "Hello! I would like information about tours and activities in Foz do Iguazu. Can you help me?",
+    },
+    fnrh: {
+      title: "National Guest Registration Form (FNRH)",
+      subtitle: "Fill in your details for the hotel reservation",
+      embraturNotice: "⚖️ As required by Embratur (Law No. 11,771/2008 and Ordinance MTur No. 17/2015), all accommodation providers must collect guest data through the National Guest Registration Form (FNRH).",
+      lgpdNotice: "🔒 Your personal data will be used exclusively to comply with Embratur regulations and for the provision of accommodation services, in accordance with the LGPD (Law No. 13,709/2018).",
+      fullName: "Full name",
+      fullNamePlaceholder: "Enter your full name",
+      nationality: "Nationality",
+      nationalityPlaceholder: "E.g.: American",
+      documentType: "Document type",
+      docCpf: "CPF (Brazil)",
+      docRg: "RG / ID Card (Brazil)",
+      docPassport: "Passport",
+      docDni: "DNI (Argentina/others)",
+      docOther: "Other document",
+      documentNumber: "Document number",
+      documentNumberPlaceholder: "Enter your document number",
+      birthDate: "Date of birth",
+      gender: "Gender",
+      genderMale: "Male",
+      genderFemale: "Female",
+      genderOther: "Other",
+      genderPreferNot: "Prefer not to say",
+      email: "Email",
+      emailPlaceholder: "your@email.com",
+      phone: "Phone / WhatsApp",
+      phonePlaceholder: "+1 (000) 000-0000",
+      address: "Address",
+      addressPlaceholder: "Street, number, apt",
+      city: "City",
+      cityPlaceholder: "Your city",
+      state: "State / Province",
+      statePlaceholder: "Your state",
+      country: "Country",
+      countryPlaceholder: "Your country",
+      zipCode: "Zip / Postal code",
+      zipCodePlaceholder: "00000",
+      profession: "Profession",
+      professionPlaceholder: "Your profession",
+      travelReason: "Reason for travel",
+      reasonTourism: "Tourism / Leisure",
+      reasonBusiness: "Business / Work",
+      reasonEvent: "Event / Conference",
+      reasonHealth: "Health / Treatment",
+      reasonOther: "Other",
+      transportation: "Mode of transportation",
+      transportAir: "Air",
+      transportCar: "Car",
+      transportBus: "Bus",
+      transportOther: "Other",
+      previousDestination: "Previous origin",
+      previousDestinationPlaceholder: "City/country you came from",
+      nextDestination: "Next destination",
+      nextDestinationPlaceholder: "Where you're going next",
+      checkinDate: "Check-in date",
+      checkoutDate: "Check-out date",
+      companions: "Companions",
+      companionsPlaceholder: "No. of companions",
+      companionName: "Companion's name",
+      companionDoc: "Document",
+      companionRelation: "Relationship",
+      addCompanion: "Add companion",
+      removeCompanion: "Remove",
+      submit: "Send form via WhatsApp",
+      successMessage: "Form sent successfully!",
+      requiredField: "Required field",
+      sectionPersonal: "Personal information",
+      sectionContact: "Contact",
+      sectionAddress: "Address",
+      sectionTravel: "Travel details",
+      sectionStay: "Stay period",
+      sectionCompanions: "Companions",
     },
   },
 };

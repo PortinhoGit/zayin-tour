@@ -118,10 +118,11 @@ export default function Footer() {
               <a href="/termos" className="text-white/40 hover:text-white/70 transition-colors">{t("footer.terms")}</a>
               <a href="/privacidade" className="text-white/40 hover:text-white/70 transition-colors">{t("footer.privacy")}</a>
             </div>
-            <p className="text-white/30 text-xs">
+            <p className="text-white/30 text-xs flex items-center gap-1">
               {t("footer.producedBy")}{" "}
-              <a href="https://github.com/Portinhogithub" target="_blank" rel="noopener noreferrer" className="text-turquoise/60 hover:text-turquoise transition-colors">
-                Ylvorix Digital Ltda
+              <a href="https://wa.me/5511999381625" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white/50 transition-colors inline-flex items-center gap-0.5">
+                Ylvorix Digital Ltda. São Paulo
+                <MessageCircle className="w-2.5 h-2.5" />
               </a>
             </p>
           </div>

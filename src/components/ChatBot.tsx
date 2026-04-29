@@ -55,6 +55,7 @@ export default function Chatbot() {
     <>
       {/* Toggle button - positioned above WhatsApp button */}
       <motion.button
+        data-chatbot-toggle
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-28 right-6 z-50 w-14 h-14 bg-turquoise hover:bg-turquoise-dark text-white rounded-full flex items-center justify-center shadow-xl transition-colors"
         whileHover={{ scale: 1.05 }}
