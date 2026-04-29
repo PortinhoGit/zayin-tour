@@ -36,6 +36,7 @@ export interface TranslationKeys {
     title2: string;
     subtitle: string;
     perPerson: string;
+    priceOnRequest: string;
     book: string;
     items: {
       name: string;
@@ -262,6 +263,7 @@ export const translations: Record<Language, TranslationKeys> = {
       title2: "Turísticos",
       subtitle: "Conheça os principais pontos turísticos de Foz do Iguaçu com a Zayin Tour.",
       perPerson: "por pessoa",
+      priceOnRequest: "Sob consulta",
       book: "Reservar",
       items: [
         { name: "Cataratas do Iguaçu", country: "Lado Brasileiro", badge: "Mais Vendido", whatsappMsg: "Olá! Quero saber sobre o passeio nas Cataratas do Iguaçu (Lado Brasileiro)." },
@@ -281,7 +283,7 @@ export const translations: Record<Language, TranslationKeys> = {
         { title: "Suporte 24/7", description: "Atendimento via WhatsApp a qualquer hora. Estamos sempre prontos para ajudar." },
         { title: "Guias Locais Experientes", description: "Guias que conhecem cada canto de Foz do Iguaçu e região da tríplice fronteira." },
         { title: "Viagem Segura", description: "Seguro viagem e transporte com conforto e segurança em todos os passeios." },
-        { title: "Melhor Preço", description: "Pacotes com os melhores preços da região. Garantia de satisfação ou seu dinheiro de volta." },
+        { title: "Pacotes Sob Medida", description: "Montamos o roteiro ideal para você. Cada viagem é única — solicite seu orçamento personalizado." },
         { title: "Transfer Incluso", description: "Buscamos você no hotel ou aeroporto. Transporte confortável e pontual." },
         { title: "Atendimento Humanizado", description: "Tratamos cada viajante como família. Deus abençoe cada experiência que proporcionamos." },
       ],
@@ -498,6 +500,7 @@ export const translations: Record<Language, TranslationKeys> = {
       title2: "Turísticos",
       subtitle: "Conoce los principales puntos turísticos de Foz do Iguazú con Zayin Tour.",
       perPerson: "por persona",
+      priceOnRequest: "Consultar precio",
       book: "Reservar",
       items: [
         { name: "Cataratas del Iguazú", country: "Lado Brasileño", badge: "Más Vendido", whatsappMsg: "¡Hola! Quiero saber sobre el paseo en las Cataratas del Iguazú (Lado Brasileño)." },
@@ -517,7 +520,7 @@ export const translations: Record<Language, TranslationKeys> = {
         { title: "Soporte 24/7", description: "Atención vía WhatsApp a cualquier hora. Siempre estamos listos para ayudar." },
         { title: "Guías Locales Expertos", description: "Guías que conocen cada rincón de Foz do Iguazú y la región de la triple frontera." },
         { title: "Viaje Seguro", description: "Seguro de viaje y transporte con confort y seguridad en todos los paseos." },
-        { title: "Mejor Precio", description: "Paquetes con los mejores precios de la región. Garantía de satisfacción o devolución." },
+        { title: "Paquetes a Medida", description: "Armamos el itinerario ideal para usted. Cada viaje es único — solicite su presupuesto personalizado." },
         { title: "Transfer Incluido", description: "Te buscamos en el hotel o aeropuerto. Transporte cómodo y puntual." },
         { title: "Atención Humanizada", description: "Tratamos a cada viajero como familia. Dios bendiga cada experiencia que brindamos." },
       ],
@@ -734,6 +737,7 @@ export const translations: Record<Language, TranslationKeys> = {
       title2: "Packages",
       subtitle: "Discover the top attractions of Foz do Iguazu with Zayin Tour.",
       perPerson: "per person",
+      priceOnRequest: "Price on request",
       book: "Book Now",
       items: [
         { name: "Iguazu Falls", country: "Brazilian Side", badge: "Best Seller", whatsappMsg: "Hello! I'd like to know about the Iguazu Falls tour (Brazilian Side)." },
@@ -753,7 +757,7 @@ export const translations: Record<Language, TranslationKeys> = {
         { title: "24/7 Support", description: "WhatsApp support anytime. We're always ready to help." },
         { title: "Expert Local Guides", description: "Guides who know every corner of Foz do Iguazu and the triple border region." },
         { title: "Safe Travel", description: "Travel insurance and comfortable, secure transportation on all tours." },
-        { title: "Best Price", description: "Packages with the best prices in the region. Satisfaction guaranteed or your money back." },
+        { title: "Custom Packages", description: "We build the perfect itinerary for you. Every trip is unique — request your personalized quote." },
         { title: "Transfer Included", description: "We pick you up at your hotel or airport. Comfortable and punctual transportation." },
         { title: "Personalized Care", description: "We treat every traveler like family. God bless every experience we provide." },
       ],

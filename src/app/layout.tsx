@@ -82,13 +82,7 @@ export default function RootLayout({
                 "opens": "00:00",
                 "closes": "23:59"
               },
-              "sameAs": ["https://github.com/Portinhogithub"],
-              "priceRange": "$$",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "2328"
-              }
+              "sameAs": ["https://github.com/Portinhogithub"]
             }),
           }}
         />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Heart, ArrowRight } from "lucide-react";
+import { Heart, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useI18n } from "@/lib/i18n";
 
@@ -16,10 +16,7 @@ const destImages = [
   "/images/nova-ponte-integracao-01.jpg",
 ];
 
-const destPrices = ["R$ 290", "R$ 350", "R$ 180", "R$ 95", "R$ 120", "R$ 150"];
-const destOrigPrices = ["R$ 390", "R$ 450", "R$ 250", "R$ 130", "R$ 160", "R$ 200"];
-const destRatings = [4.9, 4.9, 4.8, 4.8, 4.7, 4.7];
-const destReviews = [2328, 1856, 1456, 1203, 987, 654];
+// Prices and ratings removed — all values are "sob consulta" until real data is provided
 const destBadgeColors = ["bg-coral", "bg-turquoise", "bg-tropical-green", "bg-sand text-ocean-deep", "bg-ocean-mid", "bg-coral"];
 
 const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
@@ -64,21 +61,14 @@ export default function Destinations() {
                 </div>
               </div>
               <div className="p-5">
-                <div className="flex items-center justify-between mb-3">
+                <div className="mb-3">
                   <h3 className="text-xl font-bold text-ocean-deep" style={{ fontFamily: "var(--font-heading)" }}>
                     {t(`destinations.items.${idx}.name`)}
                   </h3>
-                  <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-sand text-sand" />
-                    <span className="text-sm font-semibold text-gray-800">{destRatings[idx]}</span>
-                    <span className="text-xs text-gray-500">({destReviews[idx]})</span>
-                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-sm text-gray-400 line-through">{destOrigPrices[idx]}</span>
-                    <p className="text-xl font-bold text-coral">{destPrices[idx]}</p>
-                    <span className="text-xs text-gray-500">{t("destinations.perPerson")}</span>
+                    <p className="text-base font-semibold text-turquoise">{t("destinations.priceOnRequest")}</p>
                   </div>
                   <a
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t(`destinations.items.${idx}.whatsappMsg`))}`}
