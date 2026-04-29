@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, MapPin, Calendar, Users } from "lucide-react";
+import { Search, MapPin, Calendar, Users, Baby } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 export default function Hero() {
@@ -53,12 +53,12 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 max-w-4xl mx-auto"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="flex items-center gap-3 px-4 py-3 bg-light-bg rounded-xl">
               <MapPin className="w-5 h-5 text-turquoise flex-shrink-0" />
               <div className="text-left">
                 <label className="text-xs text-gray-500 font-medium">{t("hero.destination")}</label>
-                <input type="text" placeholder={t("hero.destinationPlaceholder")} className="block w-full text-sm text-gray-800 font-medium bg-transparent outline-none placeholder:text-gray-400" />
+                <p className="text-sm text-gray-800 font-medium">{t("hero.destinationPlaceholder")}</p>
               </div>
             </div>
             <div className="flex items-center gap-3 px-4 py-3 bg-light-bg rounded-xl">
@@ -71,8 +71,15 @@ export default function Hero() {
             <div className="flex items-center gap-3 px-4 py-3 bg-light-bg rounded-xl">
               <Users className="w-5 h-5 text-turquoise flex-shrink-0" />
               <div className="text-left">
-                <label className="text-xs text-gray-500 font-medium">{t("hero.travelers")}</label>
-                <input type="text" placeholder={t("hero.travelersPlaceholder")} className="block w-full text-sm text-gray-800 font-medium bg-transparent outline-none placeholder:text-gray-400" />
+                <label className="text-xs text-gray-500 font-medium">{t("hero.adults")}</label>
+                <input type="number" min="1" max="20" placeholder={t("hero.adultsPlaceholder")} className="block w-full text-sm text-gray-800 font-medium bg-transparent outline-none placeholder:text-gray-400" />
+              </div>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-3 bg-light-bg rounded-xl">
+              <Baby className="w-5 h-5 text-turquoise flex-shrink-0" />
+              <div className="text-left">
+                <label className="text-xs text-gray-500 font-medium">{t("hero.children")}</label>
+                <input type="number" min="0" max="20" placeholder={t("hero.childrenPlaceholder")} className="block w-full text-sm text-gray-800 font-medium bg-transparent outline-none placeholder:text-gray-400" />
               </div>
             </div>
             <button className="flex items-center justify-center gap-2 bg-gradient-to-r from-coral to-coral-dark hover:from-coral-dark hover:to-coral text-white py-3 px-6 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-coral/30 hover:-translate-y-0.5">

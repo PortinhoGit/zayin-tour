@@ -19,8 +19,10 @@ export interface TranslationKeys {
     destinationPlaceholder: string;
     date: string;
     datePlaceholder: string;
-    travelers: string;
-    travelersPlaceholder: string;
+    adults: string;
+    adultsPlaceholder: string;
+    children: string;
+    childrenPlaceholder: string;
     search: string;
     statsDestinations: string;
     statsClients: string;
@@ -120,11 +122,13 @@ export const translations: Record<Language, TranslationKeys> = {
       title2: "com a Zayin Tour",
       subtitle: "Cataratas do Iguaçu, Itaipu, Parque das Aves, Marco das Três Fronteiras e muito mais. Pacotes exclusivos com atendimento personalizado.",
       destination: "Destino",
-      destinationPlaceholder: "Para onde?",
+      destinationPlaceholder: "Foz do Iguaçu",
       date: "Data",
       datePlaceholder: "Quando?",
-      travelers: "Viajantes",
-      travelersPlaceholder: "Quantas pessoas?",
+      adults: "Adultos",
+      adultsPlaceholder: "Nº de adultos",
+      children: "Crianças (até 12)",
+      childrenPlaceholder: "Nº de crianças",
       search: "Buscar",
       statsDestinations: "Destinos",
       statsClients: "Clientes Felizes",
@@ -234,11 +238,13 @@ export const translations: Record<Language, TranslationKeys> = {
       title2: "con Zayin Tour",
       subtitle: "Cataratas del Iguazú, Itaipú, Parque de las Aves, Hito de las 3 Fronteras y mucho más. Paquetes exclusivos con atención personalizada.",
       destination: "Destino",
-      destinationPlaceholder: "¿A dónde?",
+      destinationPlaceholder: "Foz do Iguazú",
       date: "Fecha",
       datePlaceholder: "¿Cuándo?",
-      travelers: "Viajeros",
-      travelersPlaceholder: "¿Cuántas personas?",
+      adults: "Adultos",
+      adultsPlaceholder: "Nº de adultos",
+      children: "Niños (hasta 12)",
+      childrenPlaceholder: "Nº de niños",
       search: "Buscar",
       statsDestinations: "Destinos",
       statsClients: "Clientes Felices",
@@ -348,11 +354,13 @@ export const translations: Record<Language, TranslationKeys> = {
       title2: "with Zayin Tour",
       subtitle: "Iguazu Falls, Itaipu Dam, Bird Park, Three Borders Landmark and much more. Exclusive packages with personalized service.",
       destination: "Destination",
-      destinationPlaceholder: "Where to?",
+      destinationPlaceholder: "Iguassu Falls",
       date: "Date",
       datePlaceholder: "When?",
-      travelers: "Travelers",
-      travelersPlaceholder: "How many?",
+      adults: "Adults",
+      adultsPlaceholder: "No. of adults",
+      children: "Children (under 12)",
+      childrenPlaceholder: "No. of children",
       search: "Search",
       statsDestinations: "Destinations",
       statsClients: "Happy Clients",
